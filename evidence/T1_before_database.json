@@ -1,0 +1,22 @@
+{
+  "database": "MyDatabase.db",
+  "user_version": 1,
+  "guests": [
+    {
+      "_id": 2,
+      "name": "River",
+      "age": 35
+    },
+    {
+      "_id": 3,
+      "name": "Acorn",
+      "age": 0
+    },
+    {
+      "_id": 4,
+      "name": "Oak",
+      "age": 130
+    }
+  ],
+  "count": 3
+}

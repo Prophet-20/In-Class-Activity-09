@@ -1,0 +1,48 @@
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:sqflite/sqflite.dart';
+
+// Reconstructed from the course's documented starter API and schema.
+class DatabaseHelper {
+  static const columnId = '_id';
+  static const columnName = 'name';
+  static const columnAge = 'age';
+  static const table = 'my_table';
+  late Database _db;
+
+  Future<void> init() async {
+    final directory = await getApplicationDocumentsDirectory();
+    _db = await openDatabase(
+      join(directory.path, 'MyDatabase.db'),
+      version: 1,
+      onCreate: (db, version) async {
+        await db.execute('''
+          CREATE TABLE $table (
+            $columnId INTEGER PRIMARY KEY,
+            $columnName TEXT NOT NULL,
+            $columnAge INTEGER NOT NULL
+          )
+        ''');
+      },
+    );
+  }
+
+  Future<int> insert(Map<String, dynamic> row) => _db.insert(table, row);
+
+  Future<List<Map<String, dynamic>>> queryAllRows() =>
+      _db.query(table, orderBy: '$columnId ASC');
+
+  Future<int> queryRowCount() async =>
+      Sqflite.firstIntValue(
+        await _db.rawQuery('SELECT COUNT(*) FROM $table'),
+      ) ??
+      0;
+
+  Future<int> update(Map<String, dynamic> row) {
+    final id = row[columnId] as int;
+    return _db.update(table, row, where: '$columnId = ?', whereArgs: [id]);
+  }
+
+  Future<int> delete(int id) =>
+      _db.delete(table, where: '$columnId = ?', whereArgs: [id]);
+}

@@ -1,0 +1,4 @@
+PASS: extracted catalogue SQL creates fresh tables; preserves fixture guest; scopes edit by ID; enforces duplicate names and foreign keys; cascades only Atlas cards.
+Host SQLite only. These fixture IDs are NOT Android app observations or required T1-T6 evidence.
+foreign_key_list(cards): [(0, 0, 'folders', 'folder_id', 'id', 'NO ACTION', 'CASCADE', 'NONE')]
+index_list(cards): [(0, 'idx_cards_folder_id', 0, 'c', 0)]

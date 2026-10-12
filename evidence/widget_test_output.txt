@@ -1,0 +1,54 @@
+00:00 +0: loading <project>/test/roster_test.dart
+00:00 +0: validation rejects all five inputs and accepts boundaries
+00:00 +1: duplicate names edit by ID and cancel preserves database
+00:00 +2: failed write preserves input and releases busy flag
+Roster write failed: Bad state: Simulated write failure
+#0      MemoryHelper.insert (file://<project>/test/roster_test.dart:24:20)
+#1      _RosterScreenState._save (package:local_storage_lab/main.dart:132:33)
+#2      _InkResponseState.handleTap (package:flutter/src/material/ink_well.dart:1224:21)
+#3      GestureRecognizer.invokeCallback (package:flutter/src/gestures/recognizer.dart:362:24)
+#4      TapGestureRecognizer.handleTapUp (package:flutter/src/gestures/tap.dart:758:11)
+#5      BaseTapGestureRecognizer._checkUp (package:flutter/src/gestures/tap.dart:383:5)
+#6      BaseTapGestureRecognizer.acceptGesture (package:flutter/src/gestures/tap.dart:353:7)
+#7      GestureArenaManager.sweep (package:flutter/src/gestures/arena.dart:173:27)
+#8      GestureBinding.handleEvent (package:flutter/src/gestures/binding.dart:542:20)
+#9      GestureBinding.dispatchEvent (package:flutter/src/gestures/binding.dart:508:22)
+#10     RendererBinding.dispatchEvent (package:flutter/src/rendering/binding.dart:473:11)
+#11     GestureBinding._handlePointerEventImmediately (package:flutter/src/gestures/binding.dart:447:7)
+#12     GestureBinding.handlePointerEvent (package:flutter/src/gestures/binding.dart:404:5)
+#13     TestWidgetsFlutterBinding.handlePointerEventForSource.<anonymous closure> (package:flutter_test/src/binding.dart:1571:42)
+#14     TestWidgetsFlutterBinding.withPointerEventSource (package:flutter_test/src/binding.dart:1581:11)
+#15     TestWidgetsFlutterBinding.handlePointerEventForSource (package:flutter_test/src/binding.dart:1571:5)
+#16     WidgetTester.sendEventToBinding.<anonymous closure> (package:flutter_test/src/widget_tester.dart:869:15)
+#17     _rootRun (dart:async/zone_root.dart:35:13)
+#18     _CustomZone.run (dart:async/zone.dart:810:35)
+#19     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#20     WidgetTester.sendEventToBinding (package:flutter_test/src/widget_tester.dart:868:27)
+#21     TestGesture.up.<anonymous closure> (package:flutter_test/src/test_pointer.dart:587:26)
+#22     _rootRun (dart:async/zone_root.dart:35:13)
+#23     _CustomZone.run (dart:async/zone.dart:810:35)
+#24     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:74:41)
+#25     TestGesture.up (package:flutter_test/src/test_pointer.dart:580:27)
+#26     WidgetController.tapAt.<anonymous closure> (package:flutter_test/src/controller.dart:1155:21)
+<asynchronous suspension>
+#27     TestAsyncUtils.guard.<anonymous closure> (package:flutter_test/src/test_async_utils.dart:130:27)
+<asynchronous suspension>
+#28     press (file://<project>/test/roster_test.dart:56:3)
+<asynchronous suspension>
+#29     main.<anonymous closure> (file://<project>/test/roster_test.dart:119:5)
+<asynchronous suspension>
+#30     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:192:15)
+<asynchronous suspension>
+#31     TestWidgetsFlutterBinding._runTestBody (package:flutter_test/src/binding.dart:1953:5)
+<asynchronous suspension>
+#32     StackZoneSpecification._registerCallback.<anonymous closure> (package:stack_trace/src/stack_zone_specification.dart:114:42)
+<asynchronous suspension>
+
+00:01 +3: refresh failure after save never repeats insert
+Roster read failed: Bad state: Simulated read failure
+#0      MemoryHelper.queryAllRows (file://<project>/test/roster_test.dart:16:19)
+#1      _RosterScreenState._readRows (package:local_storage_lab/main.dart:80:40)
+#2      _RosterScreenState._save (package:local_storage_lab/main.dart:150:31)
+<asynchronous suspension>
+
+00:01 +4: All tests passed!

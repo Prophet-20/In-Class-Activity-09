@@ -1,0 +1,3 @@
+Command: dart analyze (cached Dart SDK; not flutter analyze)
+Analyzing local_storage_lab...
+No issues found!
